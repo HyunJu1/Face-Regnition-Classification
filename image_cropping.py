@@ -5,7 +5,7 @@ import glob
 face_cascade = cv2.CascadeClassifier('./haarcascade/haarcascade_frontalface_default.xml')
 eye_casecade = cv2.CascadeClassifier('./haarcascade/haarcascade_eye.xml')
 
-image_name = glob.glob('D:\DeepLearning_Project\image1/*.jpg')
+image_name = glob.glob('D:\DeepLearning_Project\image\MDS_GOOD/*.jpeg')
 for i in image_name:
     img = cv2.imread(i)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -15,7 +15,7 @@ for i in image_name:
         cropped = img[y - int(h / 4):y + h + int(h / 4), x - int(w / 4):x + w + int(w / 4)]
         # 이미지를 저장
         s= random.random()
-        cv2.imwrite("./outputs/thumbnail" + str(s) + ".png", cropped)
+        cv2.imwrite("./thumbnail" + str(s) + ".png", cropped)
         imgNum += 1
 
     #cv2.rectangle(img, (x,y), (x+w, y+h), (255,0,0),2)

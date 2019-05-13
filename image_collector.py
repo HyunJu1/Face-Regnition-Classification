@@ -26,11 +26,11 @@ def search(url):
         element.send_keys(Keys.PAGE_DOWN)
         time.sleep(0.2)
 
-    browser.find_element_by_id("smb").click()
-
-    for i in range(50):
-        element.send_keys(Keys.PAGE_DOWN)
-        time.sleep(0.2)
+    # browser.find_element_by_id("smb").click()
+    #
+    # for i in range(50):
+    #     element.send_keys(Keys.PAGE_DOWN)
+    #     time.sleep(0.2)
 
     time.sleep(1)
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
     os.chdir(str(os.getcwd()) + "/" + str(args.keyword))
     # get the links
-    links = soup.find_all("a", class_="rg_l")
+    links = soup.find_all("a", class_="iKjWAf irc-nic isr-rtc a-no-hover-decoration")
 
     # open some processes to download
     with Pool() as pool:
